@@ -5,7 +5,7 @@ const DotEnv = require('dotenv-webpack')
 
 module.exports = env => {
   const publicPath = env.NODE_ENV === 'local' ? {
-    publicPath: '/',
+    publicPath: '/'
   } : {}
   return {
     entry: './src/index.js',

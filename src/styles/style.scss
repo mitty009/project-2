@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h2 {
+  font-size: 20px;
+  text-align: center;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.home {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.left {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/st-poster.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  flex-wrap: wrap;
+}
+
+
+.right {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/borat-poster.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.home-butt {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 20px;
+  border: 2px solid white;
+  width: 125px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+nav {
+  height: 70px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav button {
+  color: white;
+  background-color: black;
+  border: 3px solid white;
+  border-radius: 10px;
+  height: 50px;
+  width: 125px;
+  margin: 5px;
+}
+
+.link {
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+}
+
+.title h1 {
+  font-weight: 600;
+  font-size: 50px;
+  text-align: center;
+}
+
+.cards {
+  width: 1280px;
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card {
+  width: 250px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.card img {
+  height: 350px;
+  width: auto;
+  border-radius: 10px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: calc(100vh - 100px);
+  margin-top: 15px;
+}
+
+.big-card {
+  height: calc(100vh - 100px);
+  width: 1024px;
+  border: 2px solid green;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.poster-img {
+  height: calc(100vh - 104px);
+}
+.card-left {
+  width: 50%;
+}
+
+.card-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.title-tagline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.tagline {
+  width: 75%;
+  margin-top: 10px;
+}
+
+.film-title {
+  font-size: 40px;
+  text-align: center;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; 
+  border-top: 16px solid #5e2645; 
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

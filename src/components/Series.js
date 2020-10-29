@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Header from './Header'
+import streamLogo from '../img/play-circle-solid.jpg'
+import imdbLogo from '../img/imdb-brands.jpg'
+
 
 const Series = (props) => {
   const [series, updateSeries] = useState([])
@@ -37,17 +41,19 @@ const Series = (props) => {
           <p>Release Date: <strong>{series.first_air_date}</strong></p>
         </div>
         <p>{series.overview}</p>
-        <div className="flex-row">
+        <div className="seasons">
           {series.seasons.map((season, index) => {
-            return <a key={index}>{season.name}</a>
+            return <Link to={`/project-2/tv/${id}/${season.season_number}`} className="season" key={index}>{season.name}</Link>
+            
           })}
         </div>
         <div className="links">
           <a href={series.homepage}>
-            <img path="../src/img/play-circle-solid.jpg" alt="Stream"/>
+            <img className="stream-butt" src={streamLogo} alt="Stream"/>
           </a>
-          
-          {/* <a href={`https://www.imdb.com/title/${series.imdb_id}`}>Imdb</a> */}
+          <a href={`https://www.imdb.com/title/${series.imdb_id}`}>
+            <img className="stream-butt" src={imdbLogo} alt=""/>
+          </a>
         </div>
       </div>
     </div>

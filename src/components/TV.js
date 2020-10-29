@@ -18,8 +18,17 @@ const TV = () => {
   return <>
     <Header />
     <main>
-      <section className="title">
+      <section className="title flex-column">
         <h1>TV SHOWS</h1>
+        <div>
+          <input type="text" className="search" placeholder="Search All..." />
+          <select defaultValue="trending" className="dropdown">
+            <option value="trending">Trending</option>
+            <option value="latest">Latest</option>
+            <option value="on_the_air">In Cinemas</option>
+            <option value="top_rated">Top Rated</option>
+          </select>
+        </div>
       </section>
       <section className="cards">
         {series.map((show, index) => {
@@ -27,7 +36,7 @@ const TV = () => {
           return <div key={index} className="card">
             <Link to={`/project-2/tv/${show.id}`}>
               <label>
-                <img src={imgSrc} alt=""/>
+                <img src={imgSrc} alt="" />
                 <h2 className="show-title">{show.original_name}</h2>
               </label>
             </Link>
@@ -36,8 +45,6 @@ const TV = () => {
       </section>
     </main>
   </>
-
-
 }
 
 export default TV

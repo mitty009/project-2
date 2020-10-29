@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+
+}
+
+@include scrollbars(.5em, slategray)
+
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +14,7 @@
 body {
   height: 100vh;
   font-family: 'Quicksand', sans-serif;
+  background-color: rgb(156, 156, 156);
 }
 
 h2 {
@@ -52,7 +60,6 @@ a {
   width: 90%;
   flex-wrap: wrap;
 }
-
 
 .right {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/borat-poster.jpg");
@@ -112,12 +119,31 @@ main {
   justify-content: center;
   align-items: center;
   height: 70px;
+  margin: 20px;
 }
 
 .title h1 {
   font-weight: 600;
   font-size: 50px;
   text-align: center;
+}
+
+.search {
+  margin: 10px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 5px black;
+  padding: 5px;
+}
+
+.dropdown {
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 5px black;
+  padding: 5px;
 }
 
 .cards {
@@ -160,10 +186,19 @@ main {
   display: flex;
   justify-content: center;
   align-content: space-between;
+  border: 4px solid black;
+  border-radius: 30px;
+}
+
+.column {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .poster-img {
-  height: calc(100vh - 104px);
+  height: calc(100vh - 108px);
+  border-radius: 26px;
 }
 .card-left {
   width: 50%;
@@ -191,6 +226,10 @@ main {
   margin-top: 10px;
 }
 
+.movie-title {
+  margin-top: 5px;
+}
+
 .film-title {
   font-size: 40px;
   text-align: center;
@@ -198,6 +237,75 @@ main {
 
 strong {
   font-weight: 600;
+}
+
+.stream-butt {
+  height: 50px;
+  width: auto;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+}
+
+.seasons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.season {
+  width: 150px;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #dc1616;
+  color: white;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.season:hover {
+  background-color: #5e2645;
+}
+
+.big-card-series {
+  height: calc(100vh - 100px);
+  width: 90vw;
+  border: 4px solid black;
+  border-radius: 30px;
+}
+
+.color-primary {
+  color: white;
+}
+
+.episodes {
+  height: 600px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.top {
+  margin: 20px;
+}
+
+.top h1 {
+  font-weight: 700;
+  color: rgb(37, 208, 37);
+  padding-left: 42px;
 }
 
 .loader {

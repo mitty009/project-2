@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
-
-}
-
-@include scrollbars(.5em, slategray)
-
-
 * {
   box-sizing: border-box;
 }
@@ -82,6 +75,10 @@ a {
   color: white;
 }
 
+.home-butt:hover {
+  background-color: #8f8f8f;
+}
+
 nav {
   height: 70px;
   background-color: black;
@@ -99,6 +96,9 @@ nav button {
   width: 125px;
   margin: 5px;
 }
+nav button:hover {
+  background-color: #8f8f8f;
+}
 
 .link {
   font-family: 'Quicksand', sans-serif;
@@ -114,6 +114,25 @@ main {
   align-items: center;
 }
 
+.main-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.movie {
+  width: 100px;
+  margin: 300px 0 0 30px;
+}
+
+.movie h1 {
+  transform: rotate(-90deg);
+  font-size: 100px;
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 5em;
+}
+
 .title {
   display: flex;
   justify-content: center;
@@ -122,14 +141,24 @@ main {
   margin: 20px;
 }
 
+.text-secondary {
+  color: rgb(37, 208, 37);
+}
+
 .title h1 {
   font-weight: 600;
   font-size: 50px;
   text-align: center;
 }
 
+.inputs {
+  display: flex; 
+  align-items: flex-end;
+  
+}
+
 .search {
-  margin: 10px;
+  margin: 20px 10px 0;
   width: 200px;
   border-radius: 10px;
   border: none;
@@ -156,7 +185,7 @@ main {
 
 .card {
   width: 250px;
-  height: 400px;
+  height: 420px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -169,6 +198,7 @@ main {
   height: 350px;
   width: auto;
   border-radius: 10px;
+  margin-bottom: 5px;
 }
 
 .main {
@@ -188,6 +218,7 @@ main {
   align-content: space-between;
   border: 4px solid black;
   border-radius: 30px;
+  background-color: rgb(197, 197, 197);
 }
 
 .column {
@@ -206,37 +237,52 @@ main {
 
 .card-right {
   width: 50%;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
+  align-items: left;
+  margin: auto 0;
 }
 
-.title-tagline {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.ratings {
+  margin: 10px 0;
 }
 
 .tagline {
-  width: 75%;
-  margin-top: 10px;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.overview {
+  font-size: 20px;
 }
 
 .movie-title {
   margin-top: 5px;
+  font-size: 15px;
+}
+
+.show-title {
+  font-size: 15px;
+  text-align: center;
 }
 
 .film-title {
   font-size: 40px;
-  text-align: center;
+  text-align: left;
+  font-weight: 600;
 }
 
 strong {
   font-weight: 600;
+}
+.loading {
+  height: calc(100vh - 100px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .stream-butt {
@@ -249,7 +295,7 @@ strong {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 50%;
+  width: 100%;
 }
 
 .seasons {
@@ -263,7 +309,7 @@ strong {
 .season {
   width: 150px;
   height: 30px;
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 10px;
   background-color: #dc1616;
   color: white;
@@ -275,7 +321,7 @@ strong {
 }
 
 .season:hover {
-  background-color: #5e2645;
+  background-color: rgb(207, 19, 19);
 }
 
 .big-card-series {
@@ -287,6 +333,13 @@ strong {
 
 .color-primary {
   color: white;
+}
+
+.tv-info {
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 5px;
 }
 
 .episodes {
@@ -306,6 +359,26 @@ strong {
   font-weight: 700;
   color: rgb(37, 208, 37);
   padding-left: 42px;
+}
+
+.page-num {
+  margin: 30px;
+  display: flex;
+  width: 200px;
+  justify-content: space-evenly;
+  font-size: 20px;
+  align-items: center;
+}
+
+.page-num button {
+  height: 30px;
+  width: 30px;
+  border: none;
+  border-radius: 100%;
+  box-shadow: 0 0 5px black;
+  text-align: center;
+  background-color: black;
+  color: white;
 }
 
 .loader {

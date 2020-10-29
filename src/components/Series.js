@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Header from './Header'
-import streamLogo from '../img/play-circle-solid.jpg'
-import imdbLogo from '../img/imdb-brands.jpg'
-
+import streamLogo from '../img/play-circle-solid.png'
 
 const Series = (props) => {
   const [series, updateSeries] = useState([])
@@ -20,7 +18,9 @@ const Series = (props) => {
   }, [])
 
   if (!series.poster_path) {
-    return <div className="loader"></div>
+    return <div className="loading">
+      <div className="loader"></div>
+    </div>
   }
 
   return <>
@@ -31,14 +31,14 @@ const Series = (props) => {
         <img className="poster-img" src={`https://image.tmdb.org/t/p/w500/${series.poster_path}`} alt="" />
       </div>
       <div className="card-right">
-        <div className="title-tagline">
+        <div>
           <h1 className="film-title">{series.original_name}</h1>
           <p className="tagline">{series.tagline}</p>
         </div>
-        <div className="flex-row">
-          <p>Rating: <strong>{series.vote_average} / 10</strong></p>
+        <div className="tv-info">
+          <p>⭐️ <strong>{series.vote_average} / 10</strong></p>
           <p>|</p>
-          <p>Release Date: <strong>{series.first_air_date}</strong></p>
+          <p>🗓 <strong>{series.first_air_date}</strong></p>
         </div>
         <p>{series.overview}</p>
         <div className="seasons">
@@ -50,9 +50,6 @@ const Series = (props) => {
         <div className="links">
           <a href={series.homepage}>
             <img className="stream-butt" src={streamLogo} alt="Stream"/>
-          </a>
-          <a href={`https://www.imdb.com/title/${series.imdb_id}`}>
-            <img className="stream-butt" src={imdbLogo} alt=""/>
           </a>
         </div>
       </div>

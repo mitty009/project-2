@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Header from './Header'
+import streamLogo from '../img/play-circle-solid.png'
+import imdbLogo from '../img/imdb-brands.png'
 
 // https://api.themoviedb.org/3/movie/{movie_id}?api_key=7b9b37b70204eb22b3fef3d72c48305d&language=en-US
 
@@ -32,21 +34,24 @@ const Movie = (props) => {
           <div className="title-tagline">
             <h1 className="film-title">{movie.original_title}</h1>
             <p className="tagline">{movie.tagline}</p>
+            <div className="flex-row ratings">
+              <p>⭐️ <strong>{movie.vote_average} / 10</strong></p>
+              <p>|</p>
+              <p>🕐 <strong>{movie.runtime}</strong> mins</p>
+              <p>|</p>
+              <p>🗓 <strong>{movie.release_date}</strong></p>
+            </div>
           </div>
-          <div className="flex-row">
-            <p>Rating: <strong>{movie.vote_average} / 10</strong></p>
-            <p>|</p>
-            <p>Runtime: <strong>{movie.runtime}</strong> mins</p>
-            <p>|</p>
-            <p>Release Date: <strong>{movie.release_date}</strong></p>
-          </div>
-          <p>{movie.overview}</p>
+
+          <p className="overview">{movie.overview}</p>
 
           <div className="links">
             <a href={movie.homepage}>
-              <img exact path="../src/img/play-circle-solid.jpg" alt="Stream"/>
+              <img className="stream-butt" src={streamLogo} alt="Stream" />
             </a>
-            <a href={`https://www.imdb.com/title/${movie.imdb_id}`}>Imdb</a>
+            <a href={`https://www.imdb.com/title/${movie.imdb_id}`}>
+              <img className="stream-butt" src={imdbLogo} alt="" />
+            </a>
           </div>
         </div>
       </div>

@@ -18,7 +18,9 @@ const Season = (props) => {
   }, [])
 
   if (!season.poster_path) {
-    return <div className="loader"></div>
+    return <div className="loading">
+      <div className="loader"></div>
+    </div>
   }
 
   return <>

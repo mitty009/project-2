@@ -60,16 +60,16 @@ const Movies = () => {
   }
 
   function truncate(str) {
-    return (str.length > 30) ? str.substr(0, 30 - 1) + '...' : str
+    return (str.length > 25) ? str.substr(0, 25 - 1) + '...' : str
   }
 
   return <>
     <Header />
     <section className="main-row">
       <section className="movie">
-        <h1>M<span className="text-secondary">OVIES</span></h1>
+        <h1 className="text-primary">M<span className="text-secondary">OVIES</span></h1>
       </section>
-      <main>
+      <main>i
         <div className="filters">
           <input type="text" className="search" placeholder="Search All..." onKeyPress={(e) => {
             if (e.key === 'Enter') {
@@ -94,15 +94,14 @@ const Movies = () => {
             return <div key={index} className="card">
               <Link to={`/project-2/movies/${movie.id}`}>
                 <label>
-                  <img src={imgSrc} alt="" />
-                  <h2 className="movie-title">{truncate(movie.title)}</h2>
+                  <img className="text-primary" src={imgSrc} alt={truncate(movie.title)} />
                 </label>
               </Link>
             </div>
           })}
         </section>
         <div className='page-num'>
-          <button onClick={() => {
+          <button className="text-secondary" onClick={() => {
             if (page <= 1) {
               return
             } else {
@@ -113,8 +112,8 @@ const Movies = () => {
             }
           }}>{'<'}</button>
 
-          <p>{page}</p>
-          <button onClick={() => {
+          <p className="text-primary">{page}</p>
+          <button className="text-secondary"onClick={() => {
             if (maxPage === page) {
               return
             } else {

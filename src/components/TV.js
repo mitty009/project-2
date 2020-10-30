@@ -11,13 +11,21 @@ const TV = () => {
 
   useEffect(() => {
     async function getSeries() {
-      const { data } = await axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`)
+      const { data } = await axios.get(`https://api.themoviedb.org/3/trending/tv/day?api_key=${process.env.API_KEY}`)
       updateSeries(data.results)
     }
     getSeries()
   }, [])
 
-  function refresh(e) {
+  function trending() {
+    async function getMovieData() {
+      const { data } = await axios.get(`https://api.themoviedb.org/3/trending/tv/day?api_key=${process.env.API_KEY}`)
+      updateSeries(data.results)
+    }
+    getMovieData()
+  }
+
+  function other(e) {
     const filter = e
     async function refreshSeries() {
       const { data } = await axios.get(`https://api.themoviedb.org/3/tv/${filter}?api_key=${process.env.API_KEY}&language=en-US&page=1`)
@@ -25,6 +33,16 @@ const TV = () => {
     }
     refreshSeries()
   }
+
+  function refresh(e) {
+    const filter = e
+    if (filter === 'trending') {
+      trending()
+    } else {
+      other(filter)
+    }
+  }
+
 
   function refreshSearch(e, p) {
     const filter = e.replace(/\s/g, '%20')
@@ -38,14 +56,14 @@ const TV = () => {
   }
 
   function truncate(str) {
-    return (str.length > 30) ? str.substr(0, 30 - 1) + '...' : str
+    return (str.length > 25) ? str.substr(0, 25 - 1) + '...' : str
   }
 
   return <>
     <Header />
     <section className="main-row">
       <section className="movie">
-        <h1>TV<span className="text-secondary">SHOWS</span></h1>
+        <h1 className="text-primary">TV<span className="text-secondary">SHOWS</span></h1>
       </section>
       <main>
         <div className="filters">
@@ -58,6 +76,7 @@ const TV = () => {
           <select className="dropdown" onChange={(e) => {
             refresh(e.target.value)
           }}>
+            <option value="trending">Trending</option>
             <option value="popular">Popular</option>
             <option value="airing_today">Airing Today</option>
             <option value="top_rated">Top Rated</option>
@@ -69,7 +88,7 @@ const TV = () => {
             return <div key={index} className="card">
               <Link to={`/project-2/tv/${show.id}`}>
                 <label>
-                  <img src={imgSrc} alt="" />
+                  <img className="text-primary" src={imgSrc} alt={truncate(show.original_name)} />
                   <h2 className="show-title">{truncate(show.original_name)}</h2>
                 </label>
               </Link>
@@ -77,7 +96,7 @@ const TV = () => {
           })}
         </section>
         <div className='page-num'>
-          <button onClick={() => {
+          <button className="text-secondary" onClick={() => {
             if (page <= 1) {
               return
             } else {
@@ -87,9 +106,8 @@ const TV = () => {
               console.log(maxPage)
             }
           }}>{'<'}</button>
-
-          <p>{page}</p>
-          <button onClick={() => {
+          <p className="text-primary">{page}</p>
+          <button className="text-secondary" onClick={() => {
             if (maxPage === page) {
               return
             } else {
@@ -102,7 +120,6 @@ const TV = () => {
         </div>
       </main>
     </section>
-
   </>
 }
 

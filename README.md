@@ -39,7 +39,9 @@ Coming Soon |
 * [Github Repo](https://github.com/harrytodd/project-2)
 
 ## Visuals
+###### Landing Page
 ![Image](https://harrytodd.github.io/project-2/src/img/home-screenshot.png)
+###### Sample Page
 ![Image](https://harrytodd.github.io/project-2/src/img/tv-screenshot.png)
 
 ## Future Realeases

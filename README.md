@@ -15,18 +15,13 @@ about the movie or series.
 Filtering content can be completed via a search bar or by using a dropdown element. 
 The dropdown will allow filtering by the following:
 
-#### Movies 
-* Trending
-* Popular
-* In Cinemas
-* Top Rated
-* Coming Soon
-
-#### TV 
-* Trending
-* Popular
-* Airing Today
-* Top Rated
+Movies | TV
+----------- | ------------
+Trending    | Trending
+Popular | Popular
+In Cinemas | Airing Today
+Top Rated | Top Rated
+Coming Soon | ...
 
 ## URL Section 
 * [Website](todd.github.io/project-2/)

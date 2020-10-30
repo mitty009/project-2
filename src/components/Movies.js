@@ -33,7 +33,7 @@ const Movies = () => {
   function other(e) {
     const filter = e
     async function refreshSeries() {
-      const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${filter}?api_key=${process.env.API_KEY}&language=en-US&page=${page}`)
+      const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${filter}?api_key=${process.env.API_KEY}&language=en-US&page=1`)
       updateMovies(data.results)
     }
     refreshSeries()
@@ -70,7 +70,7 @@ const Movies = () => {
         <h1>M<span className="text-secondary">OVIES</span></h1>
       </section>
       <main>
-        <div>
+        <div className="filters">
           <input type="text" className="search" placeholder="Search All..." onKeyPress={(e) => {
             if (e.key === 'Enter') {
               updateSearchVal(e.target.value)
@@ -125,7 +125,6 @@ const Movies = () => {
             }
           }}>{'>'}</button>
         </div>
-
       </main>
     </section>
 

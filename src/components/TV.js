@@ -48,7 +48,7 @@ const TV = () => {
         <h1>TV<span className="text-secondary">SHOWS</span></h1>
       </section>
       <main>
-        <div className="inputs">
+        <div className="filters">
           <input type="text" className="search" placeholder="Search All..." onKeyPress={(e) => {
             if (e.key === 'Enter') {
               updateSearchVal(e.target.value)

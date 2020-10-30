@@ -4,8 +4,8 @@
 ## Description
 This application is a service where a user can filter trending, popular, 
 top rated or manually searched television and movie information. The primary purpose of
-this project was to solidify JavaScript, CSS and REACT skills developed during a 
-full stack Software Engineering bootcamp and completing the project in a 48hr 'Hackathon'. 
+this project was to solidify JavaScript, CSS, REACT and API navigation skills developed during a 
+full stack Software Engineering bootcamp by completing the project in a 48hr 'Hackathon'. 
 
 ## Usage
 Greeted by a split landing page, you are able to to choose to search either 
@@ -21,7 +21,18 @@ Trending    | Trending
 Popular | Popular
 In Cinemas | Airing Today
 Top Rated | Top Rated
-Coming Soon | ...
+Coming Soon | 
+
+*This is a web-based application only.*
+
+## Dependencies / Coding Tools
+* npm
+* Javascript
+* CSS 
+* Axios
+* React
+* Webpack
+* TMDB API
 
 ## URL Section 
 * [Website](todd.github.io/project-2/)
@@ -30,3 +41,16 @@ Coming Soon | ...
 ## Visuals
 ![Image](https://harrytodd.github.io/project-2/src/img/home-screenshot.png)
 ![Image](https://harrytodd.github.io/project-2/src/img/tv-screenshot.png)
+
+## Future Realeases
+Due to the infancy of the project and the speed in which it was created, further functionality 
+may be developed to include torrent API fetching, watching content in browser, additional filtering 
+options etc. Other ammendments need to be made for mobile responsiveness and series card information
+styling. 
+
+## Contibutors 
+#### Harry Todd 
+#### Mitchell Thomas
+
+
+

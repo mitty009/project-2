@@ -33,4 +33,5 @@ The dropdown will allow filtering by the following:
 * [Github Repo](https://github.com/harrytodd/project-2)
 
 ## Visuals
-![Image] (https://)
+![Image](https://harrytodd.github.io/project-2/src/img/home-screenshot.png)
+![Image](https://harrytodd.github.io/project-2/src/img/tv-screenshot.png)
